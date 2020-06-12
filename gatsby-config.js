@@ -13,7 +13,6 @@ module.exports = {
         alias: {
           "~": path.resolve(__dirname, 'src'),
         },
-        extensions: []
       }
     },
     {
@@ -30,6 +29,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -66,6 +66,5 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-styled-components`,
   ],
 }

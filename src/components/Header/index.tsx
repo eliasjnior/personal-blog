@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Container from '@material-ui/core/Container'
+import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'gatsby'
 
@@ -12,11 +12,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ siteTitle }) => (
   <Wrapper>
-    <Container maxWidth="lg">
+    <Box p={2}>
       <Typography variant="h1">
         <Link to="/">{siteTitle}</Link>
       </Typography>
-    </Container>
+    </Box>
   </Wrapper>
 )
 
