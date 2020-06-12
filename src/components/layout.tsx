@@ -2,6 +2,8 @@ import React from 'react'
 
 import { graphql, useStaticQuery } from 'gatsby'
 
+import GlobalStyle from '~/styles/GlobalStyle'
+
 import Header from './header'
 
 const Layout: React.FC = ({ children }) => {
@@ -17,6 +19,7 @@ const Layout: React.FC = ({ children }) => {
 
   return (
     <>
+      <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
