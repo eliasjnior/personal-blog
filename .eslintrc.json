@@ -43,8 +43,9 @@
       {
         "newlinesBetween": "always",
         "groups": [
-          ["/^react$/", "/^react-router-dom$/", "/^react-redux$/"],
+          "/^react$/",
           "module",
+          "/^~/",
           ["parent", "sibling", "index"]
         ],
         "alphabetize": {
