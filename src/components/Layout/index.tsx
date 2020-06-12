@@ -1,11 +1,14 @@
 import React from 'react'
 
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core'
+import Box from '@material-ui/core/Box'
+import Container from '@material-ui/core/Container'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import GlobalStyle from '~/styles/GlobalStyle'
 import MuiTheme from '~/styles/MuiTheme'
 
+import Footer from '../Footer'
 import Header from '../Header'
 import { Wrapper } from './styles'
 
@@ -26,12 +29,10 @@ const Layout: React.FC = ({ children }) => {
         <GlobalStyle />
         <Header siteTitle={data.site.siteMetadata.title} />
         <Wrapper className="teste">
-          <main> adsf asdfa ssa</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <Container maxWidth="lg">
+            <Box py={2}>{children}</Box>
+          </Container>
+          <Footer />
         </Wrapper>
       </MuiThemeProvider>
     </>
