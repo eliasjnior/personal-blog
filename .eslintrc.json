@@ -59,7 +59,8 @@
       {
         "ignoreDeclarationSort": true
       }
-    ]
+    ],
+    "@typescript-eslint/ban-types": "off"
   },
   "settings": {
     "react": {
