@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Link, PageProps, graphql } from 'gatsby'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 import Layout from '~/components/Layout'
@@ -17,25 +18,44 @@ import {
   PostTitle,
 } from './styles'
 
-const Blog: React.FC = () => {
+type DataType = {
+  allMarkdownRemark: {
+    edges: Array<{
+      node: {
+        id: string
+        frontmatter: {
+          title: string
+          date: string
+          description: string | null
+          slug: string
+        }
+      }
+    }>
+  }
+}
+
+const Blog: React.FC<PageProps<DataType>> = ({ data }) => {
   return (
     <Layout>
       <PostList>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((post) => (
-          <Post key={post.toString()}>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Post key={node.id}>
             <PostImage src="https://via.placeholder.com/150x150" />
             <PostContent>
               <PostTitle>
-                <a href="#">Why Every Developer Should Have A Blog</a>
+                <Link to={`/blog/post/${node.frontmatter.slug}`}>
+                  {node.frontmatter.title}
+                </Link>
               </PostTitle>
-              <PostDate>Published 2 days ago</PostDate>
-              <PostDescription>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus. Donec quam felis, ultricies...
-              </PostDescription>
-              <PostLink href="#">Read more →</PostLink>
+              <PostDate>{node.frontmatter.date}</PostDate>
+              {node.frontmatter.description && (
+                <PostDescription>
+                  {node.frontmatter.description}
+                </PostDescription>
+              )}
+              <PostLink to={`/blog/post/${node.frontmatter.slug}`}>
+                Read more →
+              </PostLink>
             </PostContent>
           </Post>
         ))}
@@ -53,3 +73,21 @@ const Blog: React.FC = () => {
 }
 
 export default Blog
+
+export const pageQuery = graphql`
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            description
+            slug
+          }
+        }
+      }
+    }
+  }
+`

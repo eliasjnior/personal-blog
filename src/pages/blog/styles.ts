@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import { darken } from 'polished'
 import styled from 'styled-components'
 
@@ -64,7 +65,7 @@ export const PostDescription = styled.p`
   margin-bottom: 10px;
 `
 
-export const PostLink = styled.a`
+export const PostLink = styled(Link)`
   color: #5f8fcb;
   transition: all linear 0.2s;
 
