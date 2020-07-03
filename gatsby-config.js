@@ -5,6 +5,7 @@ module.exports = {
     title: `Elias Júnior`,
     description: `I'm a software engineer specialised in frontend and backend development for complex scalable web apps. I write about software development on my blog.`,
     author: `@eliasjnior`,
+    siteUrl: `http://example.com`,
   },
   plugins: [
     {

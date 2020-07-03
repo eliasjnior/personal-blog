@@ -23,8 +23,6 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
   data,
   pageContext,
 }) => {
-  console.log(data)
-
   return (
     <div>
       <h1>My post</h1>
