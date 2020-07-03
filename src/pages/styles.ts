@@ -103,7 +103,7 @@ export const MenuLink = styled.a<MenuLinkProps>`
 
 export const Content = styled.div`
   margin-left: 300px;
-  padding: 30px;
+  padding: 50px;
 `
 
 export const PostList = styled.div``
