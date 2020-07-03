@@ -119,6 +119,7 @@ export const PostImage = styled.img`
   margin-right: 15px;
   user-drag: none;
   user-select: none;
+  border-radius: 3px;
 `
 
 export const PostContent = styled.div``
