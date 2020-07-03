@@ -1,27 +1,45 @@
 import React from 'react'
 
-import Box from '@material-ui/core/Box'
-import Typography from '@material-ui/core/Typography'
-import { Link } from 'gatsby'
+import { GrGithub, GrLinkedinOption } from 'react-icons/gr'
 
-import { Wrapper } from './styles'
+import {
+  Container,
+  Image,
+  Menu,
+  MenuLink,
+  Presentation,
+  Separator,
+  SocialLink,
+  SocialList,
+  Title,
+} from './styles'
 
-interface HeaderProps {
-  siteTitle: string
-}
-
-const Header: React.FC<HeaderProps> = ({ siteTitle }) => (
-  <Wrapper>
-    <Box p={2}>
-      <Typography variant="h1" align="center">
-        <Link to="/">{siteTitle}</Link>
-      </Typography>
-      <Typography align="center">
-        Hi, my name is Elias Júnior and I'm a senior software engineer. Welcome
-        to my personal website!
-      </Typography>
-    </Box>
-  </Wrapper>
+const Header: React.FC = () => (
+  <Container>
+    <Title>Elias Júnior</Title>
+    <Image src={'/profile.jpeg'} alt="Elias Júnior" />
+    <Presentation>
+      Hi, my name is Elias Júnior. Briefly introduce yourself here. You can also
+      provide a link to the about page.
+    </Presentation>
+    <SocialList>
+      <SocialLink href="#">
+        <GrLinkedinOption size={22} />
+      </SocialLink>
+      <SocialLink href="#">
+        <GrGithub size={22} />
+      </SocialLink>
+    </SocialList>
+    <Separator />
+    <Menu>
+      <MenuLink to="/" active>
+        Home
+      </MenuLink>
+      <MenuLink to="/blog">Blog</MenuLink>
+      <MenuLink to="/about-me">About me</MenuLink>
+      <MenuLink to="/contact">Contact</MenuLink>
+    </Menu>
+  </Container>
 )
 
 export default Header

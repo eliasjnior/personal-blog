@@ -2,6 +2,8 @@ import React from 'react'
 
 import { PageProps, graphql } from 'gatsby'
 
+import Layout from '~/components/Layout'
+
 type DataType = {
   markdownRemark: {
     id: string
@@ -24,10 +26,10 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
   pageContext,
 }) => {
   return (
-    <div>
+    <Layout>
       <h1>My post</h1>
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </div>
+    </Layout>
   )
 }
 
