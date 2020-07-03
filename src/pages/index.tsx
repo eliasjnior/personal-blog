@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { GrGithub, GrLinkedinOption } from 'react-icons/gr'
 
 import GlobalStyle from '~/styles/GlobalStyle'
@@ -10,6 +11,8 @@ import {
   Image,
   Menu,
   MenuLink,
+  Pagination,
+  PaginationLink,
   Post,
   PostContent,
   PostDate,
@@ -75,6 +78,14 @@ const Home: React.FC = () => {
             </Post>
           ))}
         </PostList>
+        <Pagination>
+          <PaginationLink align="left">
+            <AiOutlineArrowLeft size={25} /> Previous
+          </PaginationLink>
+          <PaginationLink align="right">
+            Next <AiOutlineArrowRight size={25} />
+          </PaginationLink>
+        </Pagination>
       </Content>
     </>
   )
