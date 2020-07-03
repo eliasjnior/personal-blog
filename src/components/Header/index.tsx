@@ -13,8 +13,12 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ siteTitle }) => (
   <Wrapper>
     <Box p={2}>
-      <Typography variant="h1">
+      <Typography variant="h1" align="center">
         <Link to="/">{siteTitle}</Link>
+      </Typography>
+      <Typography align="center">
+        Hi, my name is Elias Júnior and I'm a senior software engineer. Welcome
+        to my personal website!
       </Typography>
     </Box>
   </Wrapper>
