@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     --webkit-font-smoothing: antialised;
+    font-family: 'Roboto', sans-serif;
   }
 
   a {
