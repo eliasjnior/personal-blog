@@ -87,5 +87,6 @@ module.exports = {
         shortname: `your-disqus-shortname`
       }
     },
+    'gatsby-plugin-robots-txt',
   ],
 }
