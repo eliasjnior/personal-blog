@@ -1,7 +1,5 @@
 const path = require('path')
 
-console.log('process.env.PATH_PREFIX', process.env.PATH_PREFIX)
-
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '',
   siteMetadata: {

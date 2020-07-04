@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { withPrefix } from 'gatsby'
 import { GrGithub, GrLinkedinOption } from 'react-icons/gr'
 
 import {
@@ -17,7 +18,7 @@ import {
 const Header: React.FC = () => (
   <Container>
     <Title>Elias Júnior</Title>
-    <Image src={'/profile.jpeg'} alt="Elias Júnior" />
+    <Image src={withPrefix('/profile.jpeg')} alt="Elias Júnior" />
     <Presentation>
       Hi, my name is Elias Júnior. Briefly introduce yourself here. You can also
       provide a link to the about page.
