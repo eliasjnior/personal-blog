@@ -19,18 +19,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-        
+
     - name: Cache dependencies
       uses: c-hive/gha-yarn-cache@v1
-        
+
     - name: Install dependencies
       run: yarn
 
     - name: Build
       env:
-        PAHT_PREFIX: ${{ secrets.PATH_PREFIX }}
+        PATH_PREFIX: ${{ secrets.PATH_PREFIX }}
       run: yarn build
-    
+
     - name: Deploy to GH Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
