@@ -27,6 +27,8 @@ jobs:
       run: yarn
 
     - name: Build
+      env:
+        PAHT_PREFIX: ${{ secrets.PATH_PREFIX }}
       run: yarn build
     
     - name: Deploy to GH Pages
