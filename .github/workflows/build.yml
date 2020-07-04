@@ -1,0 +1,36 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Deploy
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v1
+
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+        
+    - name: Cache dependencies
+      uses: c-hive/gha-yarn-cache@v1
+        
+    - name: Install dependencies
+      run: yarn
+
+    - name: Build
+      run: yarn build
+    
+    - name: Deploy to GH Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
