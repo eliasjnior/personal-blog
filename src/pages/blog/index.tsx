@@ -16,7 +16,7 @@ import {
   PostLink,
   PostList,
   PostTitle,
-} from './styles'
+} from './_styles'
 
 type DataType = {
   allMarkdownRemark: {

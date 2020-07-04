@@ -4,15 +4,15 @@ import { PageProps, graphql } from 'gatsby'
 
 import Layout from '~/components/Layout'
 
+import { PostContent, PostData, PostDetails, PostTitle } from './styles'
+
 type DataType = {
   markdownRemark: {
-    id: string
+    timeToRead: number
     html: string
     frontmatter: {
       date: string
       title: string
-      description: string
-      slug: string
     }
   }
 }
@@ -27,8 +27,16 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
 }) => {
   return (
     <Layout>
-      <h1>My post</h1>
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
+      <PostDetails>
+        <PostData>{data.markdownRemark.frontmatter.date}</PostData>
+        <PostData>
+          <strong>Read time:</strong> {data.markdownRemark.timeToRead} min
+        </PostData>
+      </PostDetails>
+      <PostContent
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+      />
     </Layout>
   )
 }
@@ -38,13 +46,11 @@ export default Post
 export const pageQuery = graphql`
   query GetBlogPostBySlug($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      id
+      timeToRead
       html
       frontmatter {
         title
         date
-        description
-        slug
       }
     }
   }
