@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 
 import { format } from 'date-fns'
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 
 import {
   Container,
@@ -18,6 +18,7 @@ type BlogPostProps = {
   title: string
   description?: string
   date: string
+  thumbnail?: string
 }
 
 const BlogPost: React.FC<BlogPostProps> = ({
@@ -25,6 +26,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
   date,
   title,
   description,
+  thumbnail,
 }) => {
   const formattedDate = useMemo(() => format(new Date(date), 'dd/MM/yyyy'), [
     date,
@@ -32,7 +34,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
 
   return (
     <Container>
-      <PostImage src="https://via.placeholder.com/150x150" />
+      <PostImage src={thumbnail || withPrefix('/post-placeholder.png')} />
       <PostContent>
         <PostTitle>
           <Link to={link}>{title}</Link>

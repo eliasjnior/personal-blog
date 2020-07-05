@@ -20,6 +20,14 @@ type DataType = {
           date: string
           description: string | null
           slug: string
+          thumbnail: null | {
+            publicUrl: string
+            childImageSharp: {
+              resize: {
+                src: string
+              }
+            }
+          }
         }
       }
     }>
@@ -40,6 +48,8 @@ const Blog: React.FC<PageProps<DataType, PageContext>> = ({
   data,
   pageContext,
 }) => {
+  console.log('data', data)
+
   return (
     <>
       <Seo title={`Blog - Página ${pageContext.page}`} />
@@ -49,6 +59,9 @@ const Blog: React.FC<PageProps<DataType, PageContext>> = ({
             {data.allMarkdownRemark.edges.map(({ node }) => (
               <BlogPost
                 key={node.id}
+                thumbnail={
+                  node.frontmatter.thumbnail?.childImageSharp.resize.src
+                }
                 title={node.frontmatter.title}
                 link={`/blog/post/${node.frontmatter.slug}`}
                 description={node.frontmatter.description || undefined}
@@ -91,6 +104,14 @@ export const pageQuery = graphql`
             date
             description
             slug
+            thumbnail {
+              publicURL
+              childImageSharp {
+                resize(width: 150, quality: 90) {
+                  src
+                }
+              }
+            }
           }
         }
       }
