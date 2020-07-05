@@ -32,6 +32,7 @@ export const Presentation = styled.h2`
   text-align: center;
   font-weight: 300;
   font-size: 1rem;
+  line-height: 1.5rem;
   margin-bottom: 20px;
 `
 

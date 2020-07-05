@@ -20,8 +20,9 @@ const Header: React.FC = () => (
     <Title>Elias Júnior</Title>
     <Image src={withPrefix('/profile.jpeg')} alt="Elias Júnior" />
     <Presentation>
-      Hi, my name is Elias Júnior. Briefly introduce yourself here. You can also
-      provide a link to the about page.
+      I’m a software engineer specialized in frontend and backend development
+      for complex scalable web apps. I’ve got more than 9 years of experience on
+      building softwares for clients all over the world.
     </Presentation>
     <SocialList>
       <SocialLink href="#">
