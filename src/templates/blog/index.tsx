@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { Link, PageProps, graphql } from 'gatsby'
+import { PageProps, graphql } from 'gatsby'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 import BlogPost from '~/components/BlogPost'
 import Layout from '~/components/Layout'
 
-import { Pagination, PaginationLink, PostList } from './_styles'
+import { Pagination, PaginationLink, PostList } from './styles'
 
 type DataType = {
   allMarkdownRemark: {
@@ -24,7 +24,20 @@ type DataType = {
   }
 }
 
-const Blog: React.FC<PageProps<DataType>> = ({ data }) => {
+type PageContext = {
+  page: number
+  postsPerPage: number
+  totalResults: number
+  previousPath: string
+  nextPath: string
+  start: number
+  end: number
+}
+
+const Blog: React.FC<PageProps<DataType, PageContext>> = ({
+  data,
+  pageContext,
+}) => {
   return (
     <Layout>
       <PostList>
@@ -39,12 +52,16 @@ const Blog: React.FC<PageProps<DataType>> = ({ data }) => {
         ))}
       </PostList>
       <Pagination>
-        <PaginationLink align="left">
-          <AiOutlineArrowLeft size={25} /> Previous
-        </PaginationLink>
-        <PaginationLink align="right">
-          Next <AiOutlineArrowRight size={25} />
-        </PaginationLink>
+        {pageContext.previousPath && (
+          <PaginationLink to={pageContext.previousPath} align="left">
+            <AiOutlineArrowLeft size={25} /> Previous
+          </PaginationLink>
+        )}
+        {pageContext.nextPath && (
+          <PaginationLink to={pageContext.nextPath} align="right">
+            Next <AiOutlineArrowRight size={25} />
+          </PaginationLink>
+        )}
       </Pagination>
     </Layout>
   )
@@ -53,8 +70,12 @@ const Blog: React.FC<PageProps<DataType>> = ({ data }) => {
 export default Blog
 
 export const pageQuery = graphql`
-  {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+  query GetBlogPosts($start: Int!, $postsPerPage: Int!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $postsPerPage
+      skip: $start
+    ) {
       edges {
         node {
           id

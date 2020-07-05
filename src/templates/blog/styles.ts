@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 export const PostList = styled.div``
@@ -11,7 +12,7 @@ type PaginationLinkProps = {
   align: 'left' | 'right'
 }
 
-export const PaginationLink = styled.a<PaginationLinkProps>`
+export const PaginationLink = styled(Link)<PaginationLinkProps>`
   margin-left: ${({ align }) => (align === 'left' ? '0' : 'auto')};
   background-color: #5f8fcb;
   color: #fff;
