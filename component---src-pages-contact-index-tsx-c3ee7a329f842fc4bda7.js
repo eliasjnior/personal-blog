@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"2XcY":function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),l=a.n(n),c=a("w/+j"),r=a("VXBa"),u=a("pOKU");t.default=function(){return l.a.createElement(l.a.Fragment,null,l.a.createElement(u.a,{title:"Contact"}),l.a.createElement(r.a,null,l.a.createElement(c.a,null,l.a.createElement("h1",null,"Contact"))))}}}]);
+//# sourceMappingURL=component---src-pages-contact-index-tsx-c3ee7a329f842fc4bda7.js.map
