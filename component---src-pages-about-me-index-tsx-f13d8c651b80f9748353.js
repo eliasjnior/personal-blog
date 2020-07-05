@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"+AVo":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),l=n.n(a),r=n("qhky"),u=n("VXBa");t.default=function(){return l.a.createElement(l.a.Fragment,null,l.a.createElement(r.a,{title:"About me - Elias Júnior"}),l.a.createElement(u.a,null,l.a.createElement("h1",null,"About me")))}}}]);
+//# sourceMappingURL=component---src-pages-about-me-index-tsx-f13d8c651b80f9748353.js.map

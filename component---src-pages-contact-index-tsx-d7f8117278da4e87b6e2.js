@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{"2XcY":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),l=n.n(a),c=n("qhky"),r=n("VXBa");t.default=function(){return l.a.createElement(l.a.Fragment,null,l.a.createElement(c.a,{title:"Contact - Elias Júnior"}),l.a.createElement(r.a,null,l.a.createElement("h1",null,"Contact")))}}}]);
+//# sourceMappingURL=component---src-pages-contact-index-tsx-d7f8117278da4e87b6e2.js.map

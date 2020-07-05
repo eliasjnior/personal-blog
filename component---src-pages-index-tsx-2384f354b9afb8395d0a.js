@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{QeBL:function(e,a,n){"use strict";n.r(a);var t=n("q1tI"),l=n.n(t),r=n("qhky"),c=n("VXBa");a.default=function(){return l.a.createElement(l.a.Fragment,null,l.a.createElement(r.a,{title:"Elias Júnior - Full-stack Developer"}),l.a.createElement(c.a,null,l.a.createElement("h1",null,"Home")))}}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-2384f354b9afb8395d0a.js.map
