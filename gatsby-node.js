@@ -1,5 +1,9 @@
 const path = require('path')
 
+const dotenv = require('dotenv')
+
+dotenv.config()
+
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -59,6 +63,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve('src/templates/post/index.tsx'),
       context: {
         slug: node.frontmatter.slug,
+        url: `${process.env.APP_URI}/blog/post/${node.frontmatter.slug}`,
       },
     })
   });

@@ -1,4 +1,7 @@
 const path = require('path')
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '',
@@ -21,6 +24,12 @@ module.exports = {
         head: true,
         defer: true,
       },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: process.env.DISQUS_SHORTNAME
+      }
     },
     {
       resolve: `gatsby-plugin-alias-imports`,

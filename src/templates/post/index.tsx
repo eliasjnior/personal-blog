@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 
 import { format } from 'date-fns'
 import { PageProps, graphql } from 'gatsby'
+import { Disqus } from 'gatsby-plugin-disqus'
 
 import ContentWrapper from '~/components/ContentWrapper'
 import Layout from '~/components/Layout'
@@ -24,6 +25,7 @@ type DataType = {
 
 type PageContext = {
   slug: string
+  url: string
 }
 
 const Post: React.FC<PageProps<DataType, PageContext>> = ({
@@ -34,6 +36,12 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
     () => format(new Date(data.markdownRemark.frontmatter.date), 'dd/MM/yyyy'),
     [data.markdownRemark.frontmatter.date],
   )
+
+  const disqusConfig = {
+    url: pageContext.url,
+    identifier: data.markdownRemark.id,
+    title: data.markdownRemark.frontmatter.title,
+  }
 
   return (
     <>
@@ -52,6 +60,7 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
           <PostContent
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
           />
+          <Disqus config={disqusConfig} />
         </ContentWrapper>
       </Layout>
     </>
