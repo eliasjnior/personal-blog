@@ -3,20 +3,10 @@ import React from 'react'
 import { Link, PageProps, graphql } from 'gatsby'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
+import BlogPost from '~/components/BlogPost'
 import Layout from '~/components/Layout'
 
-import {
-  Pagination,
-  PaginationLink,
-  Post,
-  PostContent,
-  PostDate,
-  PostDescription,
-  PostImage,
-  PostLink,
-  PostList,
-  PostTitle,
-} from './_styles'
+import { Pagination, PaginationLink, PostList } from './_styles'
 
 type DataType = {
   allMarkdownRemark: {
@@ -39,25 +29,13 @@ const Blog: React.FC<PageProps<DataType>> = ({ data }) => {
     <Layout>
       <PostList>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Post key={node.id}>
-            <PostImage src="https://via.placeholder.com/150x150" />
-            <PostContent>
-              <PostTitle>
-                <Link to={`/blog/post/${node.frontmatter.slug}`}>
-                  {node.frontmatter.title}
-                </Link>
-              </PostTitle>
-              <PostDate>{node.frontmatter.date}</PostDate>
-              {node.frontmatter.description && (
-                <PostDescription>
-                  {node.frontmatter.description}
-                </PostDescription>
-              )}
-              <PostLink to={`/blog/post/${node.frontmatter.slug}`}>
-                Read more →
-              </PostLink>
-            </PostContent>
-          </Post>
+          <BlogPost
+            key={node.id}
+            title={node.frontmatter.title}
+            link={`/blog/post/${node.frontmatter.slug}`}
+            description={node.frontmatter.description || undefined}
+            date={node.frontmatter.date}
+          />
         ))}
       </PostList>
       <Pagination>
