@@ -40,4 +40,25 @@ export const PostContent = styled.div`
   p {
     margin-bottom: 15px;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 20px;
+  }
+
+  blockquote {
+    border-left: 5px solid #ccc;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
 `
