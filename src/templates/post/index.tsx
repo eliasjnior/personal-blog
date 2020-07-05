@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 
 import { format } from 'date-fns'
 import { PageProps, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 import Layout from '~/components/Layout'
 
@@ -38,22 +39,27 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
   )
 
   return (
-    <Layout>
-      <PostWrapper>
-        <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
-        <PostDetails>
-          <PostData>
-            <strong>Publish date:</strong> {formattedDate}
-          </PostData>
-          <PostData>
-            <strong>Read time:</strong> {data.markdownRemark.timeToRead} min
-          </PostData>
-        </PostDetails>
-        <PostContent
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-        />
-      </PostWrapper>
-    </Layout>
+    <>
+      <Helmet
+        title={`${data.markdownRemark.frontmatter.title} - Elias Júnior`}
+      />
+      <Layout>
+        <PostWrapper>
+          <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
+          <PostDetails>
+            <PostData>
+              <strong>Publish date:</strong> {formattedDate}
+            </PostData>
+            <PostData>
+              <strong>Read time:</strong> {data.markdownRemark.timeToRead} min
+            </PostData>
+          </PostDetails>
+          <PostContent
+            dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+          />
+        </PostWrapper>
+      </Layout>
+    </>
   )
 }
 

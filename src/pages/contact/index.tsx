@@ -3,15 +3,15 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import Layout from '~/components/Layout'
-const Home: React.FC = () => {
+const Contact: React.FC = () => {
   return (
     <>
-      <Helmet title={`Elias Júnior - Full-stack Developer`} />
+      <Helmet title={`Contact - Elias Júnior`} />
       <Layout>
-        <h1>Home</h1>
+        <h1>Contact</h1>
       </Layout>
     </>
   )
 }
 
-export default Home
+export default Contact
