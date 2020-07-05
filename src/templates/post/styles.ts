@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const PostWrapper = styled.section`
+  max-width: 1000px;
+  margin: 0 auto;
+`
+
 export const PostTitle = styled.h1`
   font-weight: 400;
   text-align: center;

@@ -5,7 +5,13 @@ import { PageProps, graphql } from 'gatsby'
 
 import Layout from '~/components/Layout'
 
-import { PostContent, PostData, PostDetails, PostTitle } from './styles'
+import {
+  PostContent,
+  PostData,
+  PostDetails,
+  PostTitle,
+  PostWrapper,
+} from './styles'
 
 type DataType = {
   markdownRemark: {
@@ -33,18 +39,20 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
 
   return (
     <Layout>
-      <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
-      <PostDetails>
-        <PostData>
-          <strong>Publish date:</strong> {formattedDate}
-        </PostData>
-        <PostData>
-          <strong>Read time:</strong> {data.markdownRemark.timeToRead} min
-        </PostData>
-      </PostDetails>
-      <PostContent
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-      />
+      <PostWrapper>
+        <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
+        <PostDetails>
+          <PostData>
+            <strong>Publish date:</strong> {formattedDate}
+          </PostData>
+          <PostData>
+            <strong>Read time:</strong> {data.markdownRemark.timeToRead} min
+          </PostData>
+        </PostDetails>
+        <PostContent
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
+      </PostWrapper>
     </Layout>
   )
 }
