@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@material-ui/core": "^4.10.2",
     "babel-plugin-styled-components": "^1.10.7",
     "date-fns": "^2.14.0",
     "gatsby": "^2.22.15",
@@ -14,8 +13,6 @@
     "gatsby-plugin-disqus": "^1.2.0",
     "gatsby-plugin-google-analytics": "^2.3.10",
     "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-material-ui": "^2.1.9",
-    "gatsby-plugin-nprogress": "^2.3.9",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sharp": "^2.6.9",
