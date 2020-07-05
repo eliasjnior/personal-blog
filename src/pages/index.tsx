@@ -1,15 +1,14 @@
 import React from 'react'
 
-import { Helmet } from 'react-helmet'
-
 import ContentWrapper from '~/components/ContentWrapper'
 import Layout from '~/components/Layout'
 import PostContent from '~/components/PostContent'
+import Seo from '~/components/Seo'
 
 const Home: React.FC = () => {
   return (
     <>
-      <Helmet title={`Elias Júnior - Full-stack Developer`} />
+      <Seo title="Home" />
       <Layout>
         <ContentWrapper>
           <PostContent>

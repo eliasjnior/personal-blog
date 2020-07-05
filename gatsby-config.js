@@ -7,6 +7,11 @@ module.exports = {
     description: `I'm a software engineer specialised in frontend and backend development for complex scalable web apps. I write about software development on my blog.`,
     author: `@eliasjnior`,
     siteUrl: `http://example.com`,
+    social: {
+      linkedin: `https://www.linkedin.com/in/eliasjnior`,
+      github: `http://github.com/eliasjnior`,
+      email: `me@eliasjr.dev`,
+    }
   },
   plugins: [
     {

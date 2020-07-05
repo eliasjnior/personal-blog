@@ -1,12 +1,12 @@
 import React from 'react'
 
 import { PageProps, graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 import BlogPost from '~/components/BlogPost'
 import ContentWrapper from '~/components/ContentWrapper'
 import Layout from '~/components/Layout'
+import Seo from '~/components/Seo'
 
 import { Pagination, PaginationLink, PostList } from './styles'
 
@@ -42,7 +42,7 @@ const Blog: React.FC<PageProps<DataType, PageContext>> = ({
 }) => {
   return (
     <>
-      <Helmet title={`Blog - Página ${pageContext.page} - Elias Júnior`} />
+      <Seo title={`Blog - Página ${pageContext.page}`} />
       <Layout>
         <ContentWrapper>
           <PostList>

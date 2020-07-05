@@ -2,11 +2,11 @@ import React, { useMemo } from 'react'
 
 import { format } from 'date-fns'
 import { PageProps, graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 
 import ContentWrapper from '~/components/ContentWrapper'
 import Layout from '~/components/Layout'
 import PostContent from '~/components/PostContent'
+import Seo from '~/components/Seo'
 
 import { PostData, PostDetails, PostTitle } from './styles'
 
@@ -36,9 +36,7 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
 
   return (
     <>
-      <Helmet
-        title={`${data.markdownRemark.frontmatter.title} - Elias Júnior`}
-      />
+      <Seo title={`${data.markdownRemark.frontmatter.title}`} />
       <Layout>
         <ContentWrapper>
           <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
