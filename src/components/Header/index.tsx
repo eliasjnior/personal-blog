@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useLocation } from '@reach/router'
 import { graphql, useStaticQuery, withPrefix } from 'gatsby'
 import { GrGithub, GrLinkedinOption, GrMail } from 'react-icons/gr'
 
@@ -30,6 +31,8 @@ type Query = {
 }
 
 const Header: React.FC = () => {
+  const { pathname } = useLocation()
+
   const { site } = useStaticQuery<Query>(graphql`
     {
       site {
@@ -64,11 +67,15 @@ const Header: React.FC = () => {
       </SocialList>
       <Separator />
       <Menu>
-        <MenuLink to="/" active>
+        <MenuLink to="/" active={pathname === '/'}>
           Home
         </MenuLink>
-        <MenuLink to="/blog">Blog</MenuLink>
-        <MenuLink to="/contact">Contact</MenuLink>
+        <MenuLink to="/blog" active={pathname === '/blog'}>
+          Blog
+        </MenuLink>
+        <MenuLink to="/contact" active={pathname === '/contact'}>
+          Contact
+        </MenuLink>
       </Menu>
     </Container>
   )

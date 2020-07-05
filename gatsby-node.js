@@ -34,8 +34,6 @@ exports.createPages = async ({ actions, graphql }) => {
   const totalPages = Math.ceil(totalResults / postsPerPage)
   const blogTemplate = path.resolve('src/templates/blog/index.tsx')
 
-  console.log('createPage', postsPerPage, totalResults, totalPages)
-
   // Create post pagination.
   for(let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
     const path = pageNumber === 1 ? `blog` : `blog/${pageNumber}`

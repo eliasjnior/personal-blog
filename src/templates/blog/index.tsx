@@ -48,8 +48,6 @@ const Blog: React.FC<PageProps<DataType, PageContext>> = ({
   data,
   pageContext,
 }) => {
-  console.log('data', data)
-
   return (
     <>
       <Seo title={`Blog - Página ${pageContext.page}`} />
