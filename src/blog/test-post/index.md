@@ -9,7 +9,7 @@ description: "Any description here"
 
 Testing post
 
-```php
+```php{numberLines: true}
 <?
 $test = 'hello world';
 ?>
