@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { withPrefix } from 'gatsby'
-import { GrGithub, GrLinkedinOption } from 'react-icons/gr'
+import { graphql, useStaticQuery, withPrefix } from 'gatsby'
+import { GrGithub, GrLinkedinOption, GrMail } from 'react-icons/gr'
 
 import {
   Container,
@@ -15,32 +15,63 @@ import {
   Title,
 } from './styles'
 
-const Header: React.FC = () => (
-  <Container>
-    <Title>Elias Júnior</Title>
-    <Image src={withPrefix('/profile.jpeg')} alt="Elias Júnior" />
-    <Presentation>
-      I’m a software engineer specialized in frontend and backend development
-      for complex scalable web apps. I’ve got more than 9 years of experience on
-      building softwares for clients all over the world.
-    </Presentation>
-    <SocialList>
-      <SocialLink href="#">
-        <GrLinkedinOption size={22} />
-      </SocialLink>
-      <SocialLink href="#">
-        <GrGithub size={22} />
-      </SocialLink>
-    </SocialList>
-    <Separator />
-    <Menu>
-      <MenuLink to="/" active>
-        Home
-      </MenuLink>
-      <MenuLink to="/blog">Blog</MenuLink>
-      <MenuLink to="/contact">Contact</MenuLink>
-    </Menu>
-  </Container>
-)
+type Query = {
+  site: {
+    siteMetadata: {
+      title: string
+      description: string
+      social: {
+        linkedin: string
+        github: string
+        email: string
+      }
+    }
+  }
+}
+
+const Header: React.FC = () => {
+  const { site } = useStaticQuery<Query>(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+          description
+          social {
+            linkedin
+            github
+            email
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Container>
+      <Title>{site.siteMetadata.title}</Title>
+      <Image src={withPrefix('/profile.jpeg')} alt="Elias Júnior" />
+      <Presentation>{site.siteMetadata.description}</Presentation>
+      <SocialList>
+        <SocialLink target="_blank" href={site.siteMetadata.social.linkedin}>
+          <GrLinkedinOption size={22} />
+        </SocialLink>
+        <SocialLink target="_blank" href={site.siteMetadata.social.github}>
+          <GrGithub size={22} />
+        </SocialLink>
+        <SocialLink href={`mailto:${site.siteMetadata.social.email}`}>
+          <GrMail size={22} />
+        </SocialLink>
+      </SocialList>
+      <Separator />
+      <Menu>
+        <MenuLink to="/" active>
+          Home
+        </MenuLink>
+        <MenuLink to="/blog">Blog</MenuLink>
+        <MenuLink to="/contact">Contact</MenuLink>
+      </Menu>
+    </Container>
+  )
+}
 
 export default Header
