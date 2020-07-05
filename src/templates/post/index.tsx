@@ -4,15 +4,11 @@ import { format } from 'date-fns'
 import { PageProps, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
+import ContentWrapper from '~/components/ContentWrapper'
 import Layout from '~/components/Layout'
+import PostContent from '~/components/PostContent'
 
-import {
-  PostContent,
-  PostData,
-  PostDetails,
-  PostTitle,
-  PostWrapper,
-} from './styles'
+import { PostData, PostDetails, PostTitle } from './styles'
 
 type DataType = {
   markdownRemark: {
@@ -44,7 +40,7 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
         title={`${data.markdownRemark.frontmatter.title} - Elias Júnior`}
       />
       <Layout>
-        <PostWrapper>
+        <ContentWrapper>
           <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
           <PostDetails>
             <PostData>
@@ -57,7 +53,7 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
           <PostContent
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
           />
-        </PostWrapper>
+        </ContentWrapper>
       </Layout>
     </>
   )

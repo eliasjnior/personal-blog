@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 import BlogPost from '~/components/BlogPost'
+import ContentWrapper from '~/components/ContentWrapper'
 import Layout from '~/components/Layout'
 
 import { Pagination, PaginationLink, PostList } from './styles'
@@ -43,29 +44,31 @@ const Blog: React.FC<PageProps<DataType, PageContext>> = ({
     <>
       <Helmet title={`Blog - Página ${pageContext.page} - Elias Júnior`} />
       <Layout>
-        <PostList>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <BlogPost
-              key={node.id}
-              title={node.frontmatter.title}
-              link={`/blog/post/${node.frontmatter.slug}`}
-              description={node.frontmatter.description || undefined}
-              date={node.frontmatter.date}
-            />
-          ))}
-        </PostList>
-        <Pagination>
-          {pageContext.previousPath && (
-            <PaginationLink to={pageContext.previousPath} align="left">
-              <AiOutlineArrowLeft size={25} /> Previous
-            </PaginationLink>
-          )}
-          {pageContext.nextPath && (
-            <PaginationLink to={pageContext.nextPath} align="right">
-              Next <AiOutlineArrowRight size={25} />
-            </PaginationLink>
-          )}
-        </Pagination>
+        <ContentWrapper>
+          <PostList>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <BlogPost
+                key={node.id}
+                title={node.frontmatter.title}
+                link={`/blog/post/${node.frontmatter.slug}`}
+                description={node.frontmatter.description || undefined}
+                date={node.frontmatter.date}
+              />
+            ))}
+          </PostList>
+          <Pagination>
+            {pageContext.previousPath && (
+              <PaginationLink to={pageContext.previousPath} align="left">
+                <AiOutlineArrowLeft size={25} /> Previous
+              </PaginationLink>
+            )}
+            {pageContext.nextPath && (
+              <PaginationLink to={pageContext.nextPath} align="right">
+                Next <AiOutlineArrowRight size={25} />
+              </PaginationLink>
+            )}
+          </Pagination>
+        </ContentWrapper>
       </Layout>
     </>
   )

@@ -38,7 +38,6 @@ const Header: React.FC = () => (
         Home
       </MenuLink>
       <MenuLink to="/blog">Blog</MenuLink>
-      <MenuLink to="/about-me">About me</MenuLink>
       <MenuLink to="/contact">Contact</MenuLink>
     </Menu>
   </Container>
