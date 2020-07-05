@@ -1,8 +1,10 @@
 import React from 'react'
 
-import { PostContent } from '~/components/BlogPost/styles'
+import { withPrefix } from 'gatsby'
+
 import ContentWrapper from '~/components/ContentWrapper'
 import Layout from '~/components/Layout'
+import PostContent from '~/components/PostContent'
 import Seo from '~/components/Seo'
 
 const NotFoundPage: React.FC = () => (
@@ -10,8 +12,22 @@ const NotFoundPage: React.FC = () => (
     <Seo title="Not found" />
     <ContentWrapper>
       <PostContent>
-        <h1>Page not found</h1>
-        <p>Esta página não existe :/</p>
+        <img
+          style={{
+            width: 400,
+            maxWidth: '100%',
+            marginBottom: 20,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            display: 'block',
+          }}
+          src={withPrefix('/404-not-found.svg')}
+          alt="Not found"
+        />
+        <h1 style={{ textAlign: 'center' }}>Page not found</h1>
+        <p style={{ textAlign: 'center' }}>
+          Sorry, but the page you're looking for does not exists.
+        </p>
       </PostContent>
     </ContentWrapper>
   </Layout>
