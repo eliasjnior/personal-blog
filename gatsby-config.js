@@ -75,12 +75,6 @@ module.exports = {
         defer: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `your-disqus-shortname`
-      }
-    },
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sitemap',
   ],

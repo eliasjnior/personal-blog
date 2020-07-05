@@ -12,6 +12,7 @@ import { PostData, PostDetails, PostTitle } from './styles'
 
 type DataType = {
   markdownRemark: {
+    id: string
     timeToRead: number
     html: string
     frontmatter: {
@@ -62,6 +63,7 @@ export default Post
 export const pageQuery = graphql`
   query GetBlogPostBySlug($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      id
       timeToRead
       html
       frontmatter {
