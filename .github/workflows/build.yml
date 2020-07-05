@@ -29,6 +29,7 @@ jobs:
     - name: Build
       env:
         PATH_PREFIX: ${{ secrets.PATH_PREFIX }}
+        GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
       run: yarn build
 
     - name: Deploy to GH Pages
