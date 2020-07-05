@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
+import { format } from 'date-fns'
 import { PageProps, graphql } from 'gatsby'
 
 import Layout from '~/components/Layout'
@@ -25,11 +26,18 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
   data,
   pageContext,
 }) => {
+  const formattedDate = useMemo(
+    () => format(new Date(data.markdownRemark.frontmatter.date), 'dd/MM/yyyy'),
+    [data.markdownRemark.frontmatter.date],
+  )
+
   return (
     <Layout>
       <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
       <PostDetails>
-        <PostData>{data.markdownRemark.frontmatter.date}</PostData>
+        <PostData>
+          <strong>Publish date:</strong> {formattedDate}
+        </PostData>
         <PostData>
           <strong>Read time:</strong> {data.markdownRemark.timeToRead} min
         </PostData>
