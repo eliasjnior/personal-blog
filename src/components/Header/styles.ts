@@ -88,6 +88,10 @@ export const MenuLink = styled(Link)<MenuLinkProps>`
   font-weight: 500;
   text-transform: uppercase;
 
+  svg {
+    margin-right: 10px;
+  }
+
   ${({ active }) =>
     active
       ? css`

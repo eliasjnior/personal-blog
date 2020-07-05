@@ -2,7 +2,9 @@ import React from 'react'
 
 import { useLocation } from '@reach/router'
 import { graphql, useStaticQuery, withPrefix } from 'gatsby'
+import { AiFillHome } from 'react-icons/ai'
 import { GrGithub, GrLinkedinOption, GrMail } from 'react-icons/gr'
+import { IoMdDocument } from 'react-icons/io'
 
 import {
   Container,
@@ -68,12 +70,15 @@ const Header: React.FC = () => {
       <Separator />
       <Menu>
         <MenuLink to="/" active={pathname === '/'}>
+          <AiFillHome size={22} />
           Home
         </MenuLink>
         <MenuLink to="/blog" active={pathname === '/blog'}>
+          <IoMdDocument size={22} />
           Blog
         </MenuLink>
         <MenuLink to="/contact" active={pathname === '/contact'}>
+          <GrMail size={22} />
           Contact
         </MenuLink>
       </Menu>
