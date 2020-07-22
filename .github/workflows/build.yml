@@ -32,6 +32,7 @@ jobs:
         GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
         APP_URI: ${{ secrets.APP_URI }}
         DISQUS_SHORTNAME: ${{ secrets.DISQUS_SHORTNAME }}
+        GATSBY_FORMSPREE_URL: ${{ secrets.FORMSPREE_URL }}
       run: yarn build
 
     - name: Deploy to GH Pages
