@@ -12,8 +12,7 @@ import Textarea from '~/components/Form/Textarea'
 import Layout from '~/components/Layout'
 import PostContent from '~/components/PostContent'
 import Seo from '~/components/Seo'
-
-import { Message } from './styles'
+import { Message } from '~/styles/pages/contact'
 
 interface FormData {
   name: string
