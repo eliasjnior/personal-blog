@@ -62,10 +62,11 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
           <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
           <PostDetails>
             <PostData>
-              <strong>Publish date:</strong> {formattedDate}
+              <strong>Data da publicação:</strong> {formattedDate}
             </PostData>
             <PostData>
-              <strong>Read time:</strong> {data.markdownRemark.timeToRead} min
+              <strong>Tempo de leitura:</strong>{' '}
+              {data.markdownRemark.timeToRead} min
             </PostData>
           </PostDetails>
           <PostContent
