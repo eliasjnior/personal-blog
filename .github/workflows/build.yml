@@ -30,7 +30,7 @@ jobs:
       env:
         PATH_PREFIX: ${{ secrets.PATH_PREFIX }}
         GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
-        APP_URI: ${{ secrets.APP_URI }}
+        GATSBY_APP_URI: ${{ secrets.APP_URI }}
         DISQUS_SHORTNAME: ${{ secrets.DISQUS_SHORTNAME }}
         GATSBY_FORMSPREE_URL: ${{ secrets.FORMSPREE_URL }}
       run: yarn build

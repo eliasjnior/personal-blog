@@ -8,6 +8,7 @@ import ContentWrapper from '~/components/ContentWrapper'
 import Layout from '~/components/Layout'
 import PostContent from '~/components/PostContent'
 import Seo from '~/components/Seo'
+import SocialShare from '~/components/SocialShare'
 
 import { CommentsContainer, PostData, PostDetails, PostTitle } from './styles'
 
@@ -19,6 +20,7 @@ type DataType = {
     frontmatter: {
       date: string
       title: string
+      slug: string
       thumbnail: {
         publicURL: string
       }
@@ -60,6 +62,9 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
       <Layout>
         <ContentWrapper>
           <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
+          <SocialShare
+            url={`${process.env.GATSBY_APP_URI}/blog/post/${data.markdownRemark.frontmatter.slug}`}
+          />
           <PostDetails>
             <PostData>
               <strong>Data da publicação:</strong> {formattedDate}
@@ -92,6 +97,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date
+        slug
         thumbnail {
           publicURL
         }
