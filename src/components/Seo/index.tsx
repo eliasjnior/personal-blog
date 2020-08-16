@@ -62,7 +62,7 @@ const Seo: React.FC<SeoProps> = ({
   const metaUrl = url
     ? [
         {
-          name: `og:url`,
+          property: `og:url`,
           content: url,
         },
       ]
@@ -71,7 +71,7 @@ const Seo: React.FC<SeoProps> = ({
   const metaImage = image
     ? [
         {
-          name: `og:image`,
+          property: `og:image`,
           content: image,
         },
       ]
@@ -81,11 +81,11 @@ const Seo: React.FC<SeoProps> = ({
     imageWidth && imageHeight
       ? [
           {
-            name: `og:image:width`,
+            property: `og:image:width`,
             content: imageWidth.toString(),
           },
           {
-            name: `og:image:height`,
+            property: `og:image:height`,
             content: imageHeight.toString(),
           },
         ]
@@ -104,7 +104,7 @@ const Seo: React.FC<SeoProps> = ({
           content: site.siteMetadata.title,
         },
         {
-          name: `description`,
+          property: `description`,
           content: metaDescription,
         },
         {
