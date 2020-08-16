@@ -100,6 +100,10 @@ const Seo: React.FC<SeoProps> = ({
       titleTemplate={`%s - ${site.siteMetadata.title}`}
       meta={[
         {
+          property: `og:site_name`,
+          content: site.siteMetadata.title,
+        },
+        {
           name: `description`,
           content: metaDescription,
         },
