@@ -20,6 +20,7 @@ type DataType = {
     frontmatter: {
       date: string
       title: string
+      description: string
       slug: string
       thumbnail: {
         publicURL: string
@@ -64,6 +65,7 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
     <>
       <Seo
         title={`${data.markdownRemark.frontmatter.title}`}
+        description={data.markdownRemark.frontmatter.description}
         image={`${process.env.GATSBY_APP_URI}${data.markdownRemark.frontmatter.thumbnail.publicURL}`}
         imageWidth={
           data.markdownRemark.frontmatter.thumbnail.childImageSharp.original
@@ -110,6 +112,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        description
         date
         slug
         thumbnail {
