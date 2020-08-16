@@ -58,7 +58,8 @@ const PostContent = styled.div`
     overflow: initial;
   }
 
-  ul {
+  ul,
+  ol {
     margin-left: 20px;
     margin-bottom: 1rem;
   }
