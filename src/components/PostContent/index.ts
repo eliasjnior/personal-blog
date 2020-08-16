@@ -17,6 +17,7 @@ const PostContent = styled.div`
   h4,
   h5,
   h6 {
+    margin-top: 30px;
     margin-bottom: 20px;
     color: ${darken(0.1, '#5f8fcb')};
   }
@@ -46,7 +47,7 @@ const PostContent = styled.div`
   .gatsby-highlight {
     background-color: #fdf6e3;
     border-radius: 0.3em;
-    margin: 0.5em 0;
+    margin: 0.5em 0 1rem 0;
     padding: 1em;
     overflow: auto;
   }
@@ -55,6 +56,11 @@ const PostContent = styled.div`
     padding: 0;
     padding-left: 2.8em;
     overflow: initial;
+  }
+
+  ul {
+    margin-left: 20px;
+    margin-bottom: 1rem;
   }
 `
 

@@ -9,6 +9,7 @@ import {
   PostDate,
   PostDescription,
   PostImage,
+  PostImageContainer,
   PostLink,
   PostTitle,
 } from './styles'
@@ -34,7 +35,9 @@ const BlogPost: React.FC<BlogPostProps> = ({
 
   return (
     <Container>
-      <PostImage src={thumbnail || withPrefix('/post-placeholder.png')} />
+      <PostImageContainer>
+        <PostImage src={thumbnail || withPrefix('/post-placeholder.png')} />
+      </PostImageContainer>
       <PostContent>
         <PostTitle>
           <Link to={link}>{title}</Link>

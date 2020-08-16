@@ -9,7 +9,7 @@ import Layout from '~/components/Layout'
 import PostContent from '~/components/PostContent'
 import Seo from '~/components/Seo'
 
-import { PostData, PostDetails, PostTitle } from './styles'
+import { CommentsContainer, PostData, PostDetails, PostTitle } from './styles'
 
 type DataType = {
   markdownRemark: {
@@ -60,7 +60,9 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
           <PostContent
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
           />
-          <Disqus config={disqusConfig} />
+          <CommentsContainer>
+            <Disqus config={disqusConfig} />
+          </CommentsContainer>
         </ContentWrapper>
       </Layout>
     </>

@@ -25,3 +25,7 @@ export const PostData = styled.div`
     }
   }
 `
+
+export const CommentsContainer = styled.div`
+  margin-top: 60px;
+`

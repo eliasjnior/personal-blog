@@ -4,13 +4,18 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: row;
+
   &:not(:last-child) {
     margin-bottom: 30px;
   }
 `
 
-export const PostImage = styled.img`
+export const PostImageContainer = styled.div`
   margin-right: 15px;
+`
+
+export const PostImage = styled.img`
   user-drag: none;
   user-select: none;
   border-radius: 3px;
