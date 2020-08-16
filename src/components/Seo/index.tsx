@@ -91,6 +91,15 @@ const Seo: React.FC<SeoProps> = ({
         ]
       : []
 
+  const linkCanonical = url
+    ? [
+        {
+          rel: 'canonical',
+          href: url,
+        },
+      ]
+    : []
+
   return (
     <Helmet
       htmlAttributes={{
@@ -98,6 +107,7 @@ const Seo: React.FC<SeoProps> = ({
       }}
       title={metaTitle}
       titleTemplate={`%s - ${site.siteMetadata.title}`}
+      link={[...linkCanonical]}
       meta={[
         {
           property: `og:site_name`,
