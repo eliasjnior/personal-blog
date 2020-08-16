@@ -8,6 +8,10 @@ type SeoProps = {
   meta?: Array<any>
   description?: string
   title?: string
+  url?: string
+  image?: string
+  imageWidth?: number
+  imageHeight: number
 }
 
 type Query = {
@@ -29,6 +33,10 @@ const Seo: React.FC<SeoProps> = ({
   meta = [],
   description,
   title,
+  url,
+  image,
+  imageWidth,
+  imageHeight,
 }) => {
   const { site } = useStaticQuery<Query>(
     graphql`
@@ -50,6 +58,38 @@ const Seo: React.FC<SeoProps> = ({
 
   const metaTitle = title || `Untitled`
   const metaDescription = description || site.siteMetadata.description
+
+  const metaUrl = url
+    ? [
+        {
+          name: `og:url`,
+          content: url,
+        },
+      ]
+    : []
+
+  const metaImage = image
+    ? [
+        {
+          name: `og:image`,
+          content: image,
+        },
+      ]
+    : []
+
+  const metaImageSizes =
+    imageWidth && imageHeight
+      ? [
+          {
+            name: `og:image:width`,
+            content: imageWidth.toString(),
+          },
+          {
+            name: `og:image:height`,
+            content: imageHeight.toString(),
+          },
+        ]
+      : []
 
   return (
     <Helmet
@@ -75,7 +115,11 @@ const Seo: React.FC<SeoProps> = ({
           property: `og:type`,
           content: `website`,
         },
-      ].concat(meta)}
+        ...metaUrl,
+        ...metaImage,
+        ...metaImageSizes,
+        ...metaUrl,
+      ]}
     />
   )
 }

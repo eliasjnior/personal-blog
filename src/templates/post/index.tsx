@@ -23,6 +23,12 @@ type DataType = {
       slug: string
       thumbnail: {
         publicURL: string
+        childImageSharp: {
+          original: {
+            width: number
+            height: number
+          }
+        }
       }
     }
   }
@@ -48,23 +54,31 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
     title: data.markdownRemark.frontmatter.title,
   }
 
+  const postUrl = useMemo(
+    () =>
+      `${process.env.GATSBY_APP_URI}/blog/post/${data.markdownRemark.frontmatter.slug}`,
+    [data.markdownRemark.frontmatter.slug],
+  )
+
   return (
     <>
       <Seo
         title={`${data.markdownRemark.frontmatter.title}`}
-        meta={[
-          {
-            property: `og:image`,
-            content: data.markdownRemark.frontmatter.thumbnail.publicURL,
-          },
-        ]}
+        image={`${process.env.GATSBY_APP_URI}${data.markdownRemark.frontmatter.thumbnail.publicURL}`}
+        imageWidth={
+          data.markdownRemark.frontmatter.thumbnail.childImageSharp.original
+            .width
+        }
+        imageHeight={
+          data.markdownRemark.frontmatter.thumbnail.childImageSharp.original
+            .height
+        }
+        url={postUrl}
       />
       <Layout>
         <ContentWrapper>
           <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
-          <SocialShare
-            url={`${process.env.GATSBY_APP_URI}/blog/post/${data.markdownRemark.frontmatter.slug}`}
-          />
+          <SocialShare url={postUrl} />
           <PostDetails>
             <PostData>
               <strong>Data da publicação:</strong> {formattedDate}
@@ -100,6 +114,12 @@ export const pageQuery = graphql`
         slug
         thumbnail {
           publicURL
+          childImageSharp {
+            original {
+              width
+              height
+            }
+          }
         }
       }
     }
