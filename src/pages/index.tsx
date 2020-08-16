@@ -12,41 +12,51 @@ const Home: React.FC = () => {
       <Layout>
         <ContentWrapper>
           <PostContent>
-            <h1>About me</h1>
+            <h1>Sobre mim</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-              imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-              mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
-              semper nisi. Aenean vulputate eleifend tellus.
+              Trabalho profissionalmente com desenvolvimento web desde 2011,
+              após concluir o Ensino Médio e me especializei na plataforma
+              WordPress, construindo temas e plugins personalizados, atendendo
+              as demandas dos meus clientes.
             </p>
-            <h2>About the blog</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-              imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-              mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
-              semper nisi. Aenean vulputate eleifend tellus.
+              Em 2013 entrei na Universidade Federal do Espírito Santo, porém
+              como já estava atuando no mercado de trabalho, com o tempo acabei
+              deixando a faculdade um pouco de lado e utilizando esse tempo que
+              seria gasto "cumprindo disciplinas" para me aprofundar em
+              conteúdos que atendesse melhor a minha área.
             </p>
-            <h2>Next steps</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-              imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-              mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
-              semper nisi. Aenean vulputate eleifend tellus.
+              Sendo assim, hoje atuo como desenvolvedor de soluções
+              especializadas para WordPress, web em geral e aplicativos móveis.
+              Utilizo como tecnologias React, React Native e NodeJS, mas tenho
+              conhecimento em diversas outras ferramentas que podem ser
+              utilizadas de acordo com a necessidade do projeto.
+            </p>
+            <h2>Sobre o blog</h2>
+            <p>
+              Meu conhecimento adveio de conteúdos disponibilizados através da
+              internet, seja em fóruns como Stack Overflow, ou até mesmo em
+              pequenos blogs escritos por aí que acabei me deparando através dos
+              buscadores.
+            </p>
+            <p>
+              Como já atingi uma maturidade nos meus códigos, sinto que posso
+              compartilhar parte desse conhecimento com pessoas que eu nem
+              conheço e que de alguma forma será útil, mesmo que não tenha como
+              objetivo principal expandir o alcance do blog.
+            </p>
+            <p>
+              Sendo assim, irei compartilhar coias do meu dia a dia, seja de
+              programação, ferramentas, política ou empreendedorismo. Sintam-se
+              à vontade para comentar e tirar as dúvidas, ou entrar em contato
+              comigo caso tenha algo mais direto para falar comigo.
+            </p>
+            <h2>Próximos passos</h2>
+            <p>
+              Aos poucos irei expandindo o conteúdo e o que disponibilizo aqui.
+              Irei aproveitando uns fins de semana e tempos livres para melhorar
+              o conteúdo disponibilizado.
             </p>
           </PostContent>
         </ContentWrapper>

@@ -7,7 +7,7 @@ module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '',
   siteMetadata: {
     title: `Elias Júnior`,
-    description: `I'm a software engineer specialized in frontend and backend development for complex scalable web apps. I write about software development on my blog.`,
+    description: `Sou desenvolvedor web especializado em frontend e backend para aplicações complexas e escaláveis. Tenho mais de 9 anos de experiência em desenvolvimento de software para clientes ao redor do mundo.`,
     author: `@eliasjnior`,
     siteUrl: `http://example.com`,
     social: {

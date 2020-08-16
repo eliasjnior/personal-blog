@@ -1,3 +1,4 @@
+import { darken } from 'polished'
 import styled from 'styled-components'
 
 const PostContent = styled.div`
@@ -17,6 +18,7 @@ const PostContent = styled.div`
   h5,
   h6 {
     margin-bottom: 20px;
+    color: ${darken(0.1, '#5f8fcb')};
   }
 
   blockquote {
