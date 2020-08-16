@@ -19,6 +19,9 @@ type DataType = {
     frontmatter: {
       date: string
       title: string
+      thumbnail: {
+        publicURL: string
+      }
     }
   }
 }
@@ -45,7 +48,15 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
 
   return (
     <>
-      <Seo title={`${data.markdownRemark.frontmatter.title}`} />
+      <Seo
+        title={`${data.markdownRemark.frontmatter.title}`}
+        meta={[
+          {
+            property: `og:image`,
+            content: data.markdownRemark.frontmatter.thumbnail.publicURL,
+          },
+        ]}
+      />
       <Layout>
         <ContentWrapper>
           <PostTitle>{data.markdownRemark.frontmatter.title}</PostTitle>
@@ -80,6 +91,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date
+        thumbnail {
+          publicURL
+        }
       }
     }
   }

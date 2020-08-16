@@ -1,8 +1,9 @@
 ---
 title: "Como inicio um projeto React?"
 slug: "como-inicio-projeto-react"
+date: "2020-08-16T17:06:43.156Z"
 description: "Um resumo de como configuro meu projeto React com Create React App, ESLint, Prettier, Conventional Commits, import alias e Typescript."
-thumbnail: ./coding.jpg
+thumbnail: ./react-coding.jpg
 ---
 
 Este é um processo que tenho seguido em todos os projetos com React.
