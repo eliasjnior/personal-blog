@@ -71,7 +71,7 @@ const Header: React.FC = () => {
       <Menu>
         <MenuLink to="/" active={pathname === '/'}>
           <AiFillHome size={22} />
-          Home
+          Início
         </MenuLink>
         <MenuLink to="/blog" active={pathname === '/blog'}>
           <IoMdDocument size={22} />
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
         </MenuLink>
         <MenuLink to="/contact" active={pathname === '/contact'}>
           <GrMail size={22} />
-          Contact
+          Contato
         </MenuLink>
       </Menu>
     </Container>

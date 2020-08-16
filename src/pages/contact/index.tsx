@@ -65,15 +65,15 @@ const Contact: React.FC<PageProps<DataType>> = ({ data }) => {
           <PostContent>
             <h1>Contact</h1>
             <p>
-              You can reach me on{' '}
+              Você pode entrar em contato comigo através do email{' '}
               <a href={`mailto:${data.site.siteMetadata.social.email}`}>
                 {data.site.siteMetadata.social.email}
               </a>{' '}
-              or fill the contact form above:
+              ou preencher o formulário abaixo.
             </p>
             <Form onSubmit={handleSubmit} ref={formRef}>
               <FormGroup>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Nome</label>
                 <Input
                   id="name"
                   type="text"
@@ -93,7 +93,7 @@ const Contact: React.FC<PageProps<DataType>> = ({ data }) => {
                 />
               </FormGroup>
               <FormGroup>
-                <label htmlFor="subject">Subject</label>
+                <label htmlFor="subject">Assunto</label>
                 <Input
                   id="subject"
                   type="text"
@@ -103,7 +103,7 @@ const Contact: React.FC<PageProps<DataType>> = ({ data }) => {
                 />
               </FormGroup>
               <FormGroup>
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">Mensagem</label>
                 <Textarea
                   id="message"
                   rows={5}
@@ -118,9 +118,9 @@ const Contact: React.FC<PageProps<DataType>> = ({ data }) => {
               {(status === 'success' || status === 'error') && (
                 <Message status={status}>
                   {status === 'success'
-                    ? `Message successful sent!`
+                    ? `Mensagem enviada com sucesso!`
                     : status === 'error'
-                    ? `There was an error sending the message.`
+                    ? `Houve um erro ao enviar a mensagem.`
                     : null}
                 </Message>
               )}

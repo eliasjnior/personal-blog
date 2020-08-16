@@ -21,6 +21,16 @@ const PostContent = styled.div`
     color: ${darken(0.1, '#5f8fcb')};
   }
 
+  a {
+    text-decoration: underline;
+    transition: all linear 0.1s;
+
+    &:hover,
+    &:focus {
+      color: ${darken(0.2, '#333')};
+    }
+  }
+
   blockquote {
     border-left: 5px solid #ccc;
     padding-left: 15px;

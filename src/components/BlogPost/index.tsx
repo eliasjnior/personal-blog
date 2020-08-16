@@ -41,7 +41,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
         </PostTitle>
         <PostDate>{formattedDate}</PostDate>
         {description && <PostDescription>{description}</PostDescription>}
-        <PostLink to={link}>Read more →</PostLink>
+        <PostLink to={link}>Continue lendo →</PostLink>
       </PostContent>
     </Container>
   )
