@@ -122,7 +122,7 @@ const Seo: React.FC<SeoProps> = ({
         ...metaUrl,
         ...metaImage,
         ...metaImageSizes,
-        ...metaUrl,
+        ...meta,
       ]}
     />
   )

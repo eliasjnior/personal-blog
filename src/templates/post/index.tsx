@@ -57,7 +57,7 @@ const Post: React.FC<PageProps<DataType, PageContext>> = ({
 
   const postUrl = useMemo(
     () =>
-      `${process.env.GATSBY_APP_URI}/blog/post/${data.markdownRemark.frontmatter.slug}`,
+      `${process.env.GATSBY_APP_URI}/blog/post/${data.markdownRemark.frontmatter.slug}/`,
     [data.markdownRemark.frontmatter.slug],
   )
 
