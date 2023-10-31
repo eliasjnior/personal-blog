@@ -81,6 +81,7 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
               </p>
             </div>
           </div>
+          {/* @ts-expect-error: type it later. */}
           <Button className="ml-auto" as={Link} href={post.url} target="_blank">
             View on Dev.to
           </Button>
@@ -119,6 +120,7 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
 
             return match ? (
               <Prism
+                // @ts-expect-error: style not working.
                 style={a11yDark}
                 language={match ? match[1] : undefined}
                 PreTag="div"

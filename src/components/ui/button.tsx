@@ -39,7 +39,7 @@ type ButtonProps<As extends React.ElementType = "button"> = {
 } & React.ComponentProps<As> &
   VariantProps<typeof buttonVariants>;
 
-const Button = React.forwardRef<any, ButtonProps>(
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, as: Component = "button", ...props }, ref) => {
     return (
       <Component
